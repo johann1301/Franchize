@@ -17,3 +17,19 @@
 .App-link {
   color: #61dafb;
 }
+
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+
+.pages{
+  text-decoration: none;
+  margin: 10px;
+  padding: 5px 10px;
+  border: 3px solid black;
+  border-radius: 10px;
+}
