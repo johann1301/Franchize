@@ -12,10 +12,24 @@ const userSchema = new Schema(
       type: String,
       required: true
     },
+    lastName: {
+      type: String,
+      required: true
+    },
     password: {
       type: String,
       required: true
     },
+    address: {
+		  street: String,
+      number: Number,
+      zipcode: Number,
+      city: String,
+		}, 
+    geburtsdatum: Date,
+    telefon: Number,
+    vertragsart: String,
+    
   });
 
 const User = model("User", userSchema);
