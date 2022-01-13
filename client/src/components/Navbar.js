@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import 'boxicons'
 
 
 export default function Navbar() {
@@ -9,7 +10,8 @@ export default function Navbar() {
 
 
         <Link to={'/'}>
-            Company Name
+          <box-icon type='solid' name='leaf'></box-icon>
+          Company Name
         </Link>
 
         <div >
