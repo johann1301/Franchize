@@ -10,6 +10,7 @@ router.get('/events', (req, res, next) => {
 		.catch(err => next(err))
 });
 
+// create an Event
 router.post('/events/create', (req, res, next)=>{
     const { imageUrl, title, date, time, category, description} = req.body
     Event.create({imageUrl, title, date, time, category, description})
@@ -18,6 +19,7 @@ router.post('/events/create', (req, res, next)=>{
     })
     .catch(err => next(err))
 })
+
 
 
 module.exports = router;
