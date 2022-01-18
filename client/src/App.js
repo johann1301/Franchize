@@ -2,7 +2,9 @@ import './App.css';
 import {Routes, Route} from 'react-router-dom'
 import Home from './pages/Home'
 import Navbar from './components/Navbar';
-import EventCard from './components/EventCard';
+import Login from './pages/Login'
+
+
 
 
 
@@ -17,7 +19,8 @@ function App() {
       <Routes>
 
         <Route path='/' element={<Home />} />
-        <Route path='/api/events' element={<EventCard />} />
+        <Route path='/login' element={<Login />} />
+      
         
       </Routes>
 

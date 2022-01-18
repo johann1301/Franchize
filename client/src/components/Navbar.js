@@ -1,43 +1,54 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import 'boxicons'
+import logo from '../Images/clever-fit_Logo.png'
 
 
 export default function Navbar() {
 
+   const [open, setOpen] = useState(false)
+ 
 	return (
+  
 	<div className = "navbar">
 
 
-        <Link to={'/'}>
-          <box-icon type='solid' name='leaf'></box-icon>
-          Company Name
-        </Link>
+      <Link to={'/'}>
+          
+        <img src={logo} alt='Logo' className='logo' /> 
 
-        <div >
-
-        <Link className = "pages" to={'/'}>
+      </Link>
+      
+        <div className='menu' >
+        <box-icon name='menu' color='#ffffff' onClick={() => setOpen(!open)}  ></box-icon>
+        { open &&
+        <>
+        <div className='dropdown'>
+        <Link onClick={() => setOpen(!open)} className = "pages" to={'/'}>
 			Home 
         </Link>
 
-        <Link className = "pages" to={'/firstPage'}>
+        <Link onClick={() => setOpen(!open)} className = "pages" to={'/firstPage'}>
 			1 Page 
         </Link>
 
-        <Link className = "pages" to={'/secondPage'}>
+        <Link onClick={() => setOpen(!open)} className = "pages" to={'/secondPage'}>
 			2 Page
         </Link>
 
-        <Link className = "pages"  to={'/thirdPage'}>
+        <Link onClick={() => setOpen(!open)} className = "pages"  to={'/thirdPage'}>
 			3 Page
-        </Link>
+        </Link> 
+        </div> 
+        </>}
 
         </div>
 
         <Link to={'/login'}>
-			Login/Signup
+        <box-icon name='log-in' color='#ffffff' ></box-icon>
         </Link>
 
-    </div>
+  </div>
+  
 
 )}

@@ -1,3 +1,7 @@
+/* *{
+border: 3px solid black;
+} */
+
 .App {
   text-align: center;
 }
@@ -20,16 +24,47 @@
 
 
 .navbar{
+  height:20px;
   display: flex;
   justify-content: space-between;
-  margin: 20px;
+  padding: 20px;
+  background-color: #363636;
 }
 
+.menu{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.pages{
-  text-decoration: none;
-  margin: 10px;
-  padding: 5px 10px;
-  border: 3px solid black;
+.dropdown{
+  position: absolute;
+  top: 55px;
+  background-color: #363636;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
   border-radius: 10px;
 }
+
+.pages{
+  color: white;
+  background-color: #363636;
+  text-decoration: none;
+  margin: 5px;
+  padding: 10px 100px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.pages:hover{
+  background-color: #727272 ;
+}
+
+.logo{
+  width: 40px;
+  margin: -10px;
+}
+

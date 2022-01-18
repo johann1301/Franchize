@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const eventSchema = new Schema({
+const postSchema = new Schema({
 	imageUrl: String,
 	title: String,
 	date: String,
@@ -13,5 +13,5 @@ const eventSchema = new Schema({
 	timestamps: true,
 });
 
-const Events = mongoose.model('Event', eventSchema);
-module.exports = Events;
+const Posts = mongoose.model('Post', postSchema);
+module.exports = Posts;

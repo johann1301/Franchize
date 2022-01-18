@@ -3,11 +3,11 @@ import PostCard from '../components/PostCard';
 
 export default function Home() {
 	return (
-		<>
+		
 		<div>
-			<h1>Home Page </h1>
+			<h1>Login </h1>
 		</div>
-		<PostCard/>
-		</>
+	
+	
 	)
 }
