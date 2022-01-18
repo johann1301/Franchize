@@ -14,7 +14,7 @@ export default function Login() {
             <form className='login-form'>
             <input className="formInput" type="text" name="email" placeholder='Email' />
             <input className="formInput" type="password" placeholder='Password' />
-            <button className='details-btn' type="submit">Log in</button>
+            <button className='details-btn' type="submit">Login</button>
             </form>
         </div>
         </div>

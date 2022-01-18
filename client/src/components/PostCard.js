@@ -28,9 +28,12 @@ export default function PostCard(props) {
     let list = posts.map ( post =>{
   
       return (
-          
-    <h3 to={`/posts/${post._id}`} key={post._id}>{post.title}</h3>
-  
+     
+	 <div className='post-container' key={post._id}>     
+    <h3 >{post.title}</h3>
+	<h5 className='post-description'>{post.description}</h5>
+	</div>
+    
       )
   })
 
