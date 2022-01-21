@@ -2,11 +2,15 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import 'boxicons'
 import logo from '../Images/clever-fit_Logo.png'
+import { useContext } from 'react'
+import { AuthContext } from '../context/auth'
 
 
 export default function Navbar() {
 
    const [open, setOpen] = useState(false)
+
+   const {isLoggedIn, user, logoutUser} = useContext(AuthContext)
  
 	return (
   
@@ -41,12 +45,27 @@ export default function Navbar() {
         </Link> 
         </div> 
         </>}
-
         </div>
 
-        <Link to={'/login'}>
+        {isLoggedIn ?(
+    <>
+
+      <Link onClick={logoutUser} to={'/login'}>
+        <box-icon name='log-out' color='#ffffff' ></box-icon>
+      </Link>
+    
+	  </>
+
+):(
+    <>
+    
+      <Link to={'/login'}>
         <box-icon name='log-in' color='#ffffff' ></box-icon>
-        </Link>
+      </Link>
+
+    </>
+)}
+       
 
   </div>
   

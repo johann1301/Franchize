@@ -2,7 +2,7 @@ const router = require('express').Router()
 const Post = require ('../models/Post')
 
 // get all Post
-router.get('/posts', (req, res, next) => {
+router.get('/', (req, res, next) => {
 	Post.find()
 		.then(posts => {
 			res.status(200).json(posts)
@@ -11,7 +11,7 @@ router.get('/posts', (req, res, next) => {
 });
 
 // create an Post
-router.post('/posts/create', (req, res, next)=>{
+router.post('/create', (req, res, next)=>{
     const { imageUrl, title, date, time, category, description} = req.body
     Post.create({imageUrl, title, date, time, category, description})
     .then(post =>{
@@ -21,7 +21,7 @@ router.post('/posts/create', (req, res, next)=>{
 })
 
 // get specific Post
-router.get('/posts/:id', (req, res, next) => {
+router.get('/:id', (req, res, next) => {
 	Post.findById(req.params.id)
 		.then(posts => {
 			res.status(200).json(posts)
@@ -30,7 +30,7 @@ router.get('/posts/:id', (req, res, next) => {
 });
 
 // get update Post
-router.put('/posts/:id', (req, res, next) => {
+router.put('/:id', (req, res, next) => {
     const { imageUrl, title, date, time, category, description} = req.body
 	Post.findByIdAndUpdate(req.params.id, {
         imageUrl, title, date, time, category, description  
@@ -42,7 +42,7 @@ router.put('/posts/:id', (req, res, next) => {
 });
 
 // delete Post
-router.delete('/posts/:id', (req, res, next) => {
+router.delete('/:id', (req, res, next) => {
 	Post.findByIdAndDelete(req.params.id)
 		.then(() => {
             res.status(200).json({message: 'Post deleted'})   

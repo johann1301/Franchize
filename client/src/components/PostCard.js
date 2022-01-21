@@ -5,12 +5,13 @@ import axios from 'axios'
 
 export default function PostCard(props) {
 
+	const storedToken = localStorage.getItem('authToken')
 
   const [posts, setPosts] = useState([])
 
 	const getAllPosts = () => {
 		// request all the posts from the server
-		axios.get('/posts')
+		axios.get('/posts' , { headers: { Authorization: `Bearer ${storedToken}` } })
 			.then(response => {
 				setPosts(response.data)
 			})

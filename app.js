@@ -9,6 +9,8 @@ require("./db");
 // https://www.npmjs.com/package/express
 const express = require("express");
 
+const { isAuthenticated } = require('./middleware/jwt.js')
+
 const app = express();
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
@@ -16,11 +18,11 @@ require("./config")(app);
 
 // 👇 Start handling routes here
 // Contrary to the views version, all routes are controlled from the routes/index.js
-const posts = require("./routes/posts");
-app.use("/", posts);
+const posts = require("./routes/posts.js");
+app.use("/posts", isAuthenticated, posts);
 
 const auth = require("./routes/auth");
-app.use("/", auth);
+app.use("/auth", auth);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
