@@ -10,18 +10,15 @@ export default function Navbar() {
 
    const [open, setOpen] = useState(false)
 
-   const {isLoggedIn, user, logoutUser} = useContext(AuthContext)
+   const {isLoggedIn, logoutUser} = useContext(AuthContext)
  
+
 	return (
   
 	<div className = "navbar">
 
 
-      <Link to={'/'}>
-          
-        <img src={logo} alt='Logo' className='logo' /> 
-
-      </Link>
+      
       
         <div className='menu' >
         <box-icon name='menu' color='#ffffff' onClick={() => setOpen(!open)}  ></box-icon>
@@ -46,6 +43,12 @@ export default function Navbar() {
         </div> 
         </>}
         </div>
+
+        <Link to={'/'}>
+          
+        <img src={logo} alt='Logo' className='logo' /> 
+
+      </Link>
 
         {isLoggedIn ?(
     <>

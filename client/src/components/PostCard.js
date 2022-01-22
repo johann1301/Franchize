@@ -5,7 +5,7 @@ import axios from 'axios'
 
 export default function PostCard(props) {
 
-	const storedToken = localStorage.getItem('authToken')
+  const storedToken = localStorage.getItem('authToken')
 
   const [posts, setPosts] = useState([])
 

@@ -5,7 +5,6 @@ import { Link, useNavigate } from 'react-router-dom'
 
 export default function Signup() {
 
-
     const [email, setEmail] = useState ('')
     const [password, setPassword] = useState ('')
     const [name, setName] = useState ('')
@@ -21,8 +20,9 @@ export default function Signup() {
 
     const handleSubmit = e => {
 		e.preventDefault()
-		const requestBody = { email, password, name, lastName }
-
+    
+		const requestBody = { email , password, name, lastName }
+       
 		axios.post('/auth/signup', requestBody)
 			.then(response => {
 				// redirect -> login 

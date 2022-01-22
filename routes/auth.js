@@ -11,7 +11,7 @@ router.post('/signup', (req, res, next) => {
 
 	// Check if email or password or name are provided as empty string 
 	if (email === '' || password === '' || name === '' || lastName === '') {
-		res.status(400).json({ message: "Provide email, password, name and birthday" });
+		res.status(400).json({ message: "Provide Email, Password, Name and Last Name" });
 		return;
 	}
 
@@ -28,6 +28,7 @@ router.post('/signup', (req, res, next) => {
 		return;
 	}
 
+    
 	// Check the users collection if a user with the same email already exists
 	User.findOne({ email })
 		.then((foundUser) => {
@@ -35,15 +36,14 @@ router.post('/signup', (req, res, next) => {
 			if (foundUser) {
 				res.status(400).json({ message: "User already exists." });
 				return;
-			}
+			} 
 
 			// If email is unique, proceed to hash the password
 			const salt = bcrypt.genSaltSync(saltRounds);
 			const hashedPassword = bcrypt.hashSync(password, salt);
-
 			// Create the new user in the database
 			// We return a pending promise, which allows us to chain another `then` 
-			return User.create({ email, password: hashedPassword, name, lastName });
+			return User.create({ email , password: hashedPassword, name, lastName });
 		})
 		.then((createdUser) => {
 			// Deconstruct the newly created user object to omit the password
@@ -55,6 +55,7 @@ router.post('/signup', (req, res, next) => {
 
 			// Send a json response containing the user object
 			res.status(201).json({ user: user });
+           
 		})
 		.catch(err => {
 			console.log(err);
@@ -63,14 +64,17 @@ router.post('/signup', (req, res, next) => {
 });
 
 router.post('/login', (req, res, next) => {
+   
 	const { email, password } = req.body
+
+    
 
 	// Check if email or password or name are provided as empty string 
 	if (email === '' || password === '') {
 		res.status(400).json({ message: "Provide email and password" });
 		return;
 	}
-
+    
 	User.findOne({ email })
 		.then(foundUser => {
 			if (!foundUser) {
