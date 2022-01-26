@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 
 
-export default function PostCard(props) {
+export default function PostCard() {
 
   const storedToken = localStorage.getItem('authToken')
 

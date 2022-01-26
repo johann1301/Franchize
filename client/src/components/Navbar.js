@@ -29,7 +29,7 @@ export default function Navbar() {
 			Home 
         </Link>
 
-        <Link onClick={() => setOpen(!open)} className = "pages" to={'/profile'}>
+        <Link onClick={() => setOpen(!open)} className = "pages" to={'/user'}>
 			Profile 
         </Link>
 
