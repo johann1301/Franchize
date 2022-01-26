@@ -4,6 +4,8 @@ import Home from './pages/Home'
 import Navbar from './components/Navbar';
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import Error from './pages/Error'
+
 
 
 
@@ -14,7 +16,7 @@ function App() {
     <div className="App">
 
 
-
+    
     <Navbar/>
 
       <Routes>
@@ -22,6 +24,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
+        <Route path='*' element={<Error />} /> 
       
         
       </Routes>
