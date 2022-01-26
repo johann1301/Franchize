@@ -11,7 +11,7 @@ export default function Home() {
 
 	const navigate = useNavigate()
 
-	console.log(isLoggedIn)
+
 
 	// useEffect(() => {
 

@@ -29,8 +29,8 @@ export default function Navbar() {
 			Home 
         </Link>
 
-        <Link onClick={() => setOpen(!open)} className = "pages" to={'/firstPage'}>
-			1 Page 
+        <Link onClick={() => setOpen(!open)} className = "pages" to={'/profile'}>
+			Profile 
         </Link>
 
         <Link onClick={() => setOpen(!open)} className = "pages" to={'/secondPage'}>

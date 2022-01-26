@@ -26,9 +26,10 @@ const userSchema = new Schema(
       zipcode: Number,
       city: String,
 		}, 
-    geburtsdatum: Date,
-    telefon: Number,
+    bithday: Date,
+    phone: Number,
     vertragsart: String,
+    roll: String,
     
   });
 

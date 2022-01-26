@@ -107,8 +107,23 @@ router.post('/login', (req, res, next) => {
 
 router.get('/verify', isAuthenticated, (req, res, next) => {
 	// if the token is valid we can access it on : req.payload
-	console.log('request payload: ', req.payload)
+	// console.log('request payload: ', req.payload)
 	res.status(200).json(req.payload)
+});
+
+// get a specific User
+router.get('/profile', (req, res, next) => {
+    console.log(req.payload)
+	User.findById(req.id)
+		.then(profile => {
+			
+			if (!profile) {
+				res.status(404).json(profile)
+			} else {
+				res.status(200).json(profile)
+			}
+		})
+		.catch(err => next(err))
 });
  
 

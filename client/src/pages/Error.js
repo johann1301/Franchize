@@ -1,7 +1,7 @@
 import React from 'react'
 import PostCard from '../components/PostCard';
 
-export default function Home() {
+export default function Error() {
 
 	
 

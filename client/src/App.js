@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Error from './pages/Error'
+import Profile from './pages/Profile';
 
 
 
@@ -22,6 +23,7 @@ function App() {
       <Routes>
 
         <Route path='/' element={<Home />} />
+        <Route path='/profile' element={<Profile />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='*' element={<Error />} /> 
