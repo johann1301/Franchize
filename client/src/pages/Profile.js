@@ -10,6 +10,7 @@ export default function PostCard() {
   const [user, setUser] = useState([])
 
   
+  
 
 	const getUser = () => {
 		// request all the posts from the server
